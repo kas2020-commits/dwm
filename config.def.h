@@ -2,24 +2,25 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 6;       /* gap pixel between windows */
+static const unsigned int gappx     = 0;       /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Fira Code Medium:style=Medium:size=14" };
 static const char dmenufont[]       = "Fira Code Medium:style=Medium:size=14";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_blue[]        = "#61afef";
+static const char col_gray1[]       = "#1d1f21";
+static const char col_gray2[]       = "#222222";
+static const char col_gray3[]       = "#444444";
+static const char col_gray4[]       = "#bbbbbb";
+static const char col_blue[]        = "#0931aa";
 static const char col_magenta[]     = "#c678dd";
 static const char col_nordbg[]      = "#4C566A";
-static const char col_white[]       = "#ffffff";
+static const char col_white1[]       = "#ffffff";
+static const char col_white2[]       = "#c5c8c6";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_white, col_nordbg,  col_white  },
+	/*               fg         	bg         	border   */
+	[SchemeNorm] = { col_white2, 	col_gray1, 	col_gray2 },
+	[SchemeSel]  = { col_white2, 	col_blue,	col_white2 },
 };
 
 /* tagging */
@@ -66,8 +67,8 @@ static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
-	//{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	/* { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } }, */
+	{ MODKEY|ShiftMask,             XK_p,	   spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
