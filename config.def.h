@@ -2,13 +2,13 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 0;       /* gap pixel between windows */
+static const unsigned int gappx     = 6;       /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "Fira Code Medium:style=Medium:size=14" };
-static const char dmenufont[]       = "Fira Code Medium:style=Medium:size=14";
+static const char *fonts[]          = { "Fira Code Medium:style=Medium:size=13" };
+static const char dmenufont[]       = "Fira Code Medium:style=Medium:size=13";
 static const char col_gray1[]       = "#1d1f21";
 static const char col_gray2[]       = "#222222";
 static const char col_gray3[]       = "#444444";
@@ -16,8 +16,8 @@ static const char col_gray4[]       = "#bbbbbb";
 static const char col_blue[]        = "#0931aa";
 static const char col_magenta[]     = "#c678dd";
 static const char col_nordbg[]      = "#4C566A";
-static const char col_white1[]       = "#ffffff";
-static const char col_white2[]       = "#c5c8c6";
+static const char col_white1[]      = "#ffffff";
+static const char col_white2[]      = "#c5c8c6";
 static const char *colors[][3]      = {
 	/*               fg         	bg         	border   */
 	[SchemeNorm] = { col_white2, 	col_gray1, 	col_gray2 },
@@ -49,9 +49,9 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 /* first entry is default */
 	/* symbol     arrange function */
+	{ "[M]",      monocle },
 	{ "[T]",      tile },
 	{ "[F]",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
 };
 
 /* key definitions */
@@ -86,9 +86,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
