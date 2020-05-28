@@ -6,6 +6,10 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 
 ![screenshot](media/screen1.png)
 
+## Modifications
+
+You can find all the patches added in the patches directory (.diff files)
+
 ## Requirements
 
 In order to build dwm you need the Xlib header files.
