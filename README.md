@@ -1,8 +1,9 @@
-# dwm - dynamic window manager
+## dwm 6.2 - dynamic window manager
 
 ![dwm-logo](media/dwm.png)
 
-dwm is an extremely fast, small, and dynamic window manager for X.
+dwm is an extremely fast, small, and dynamic window manager for X. This is a
+fork of suckless' project [available here](https://dwm.suckless.org/)
 
 ![screenshot](media/screen1.png)
 
@@ -36,7 +37,7 @@ $ sudo make clean install
 
 ---
 
-## Running dwm
+### Running dwm
 
 Add the following line to your .xinitrc to start dwm using startx:
 
@@ -66,7 +67,8 @@ like this in your .xinitrc:
 
 ---
 
-## Configuration
+### Configuration
 
 The configuration of dwm is done by creating a custom config.def.h
 and (re)compiling the source code.
+
