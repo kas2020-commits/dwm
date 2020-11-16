@@ -14,10 +14,8 @@ static const char col_gray3[]       = "#444444";
 static const char col_gray4[]       = "#bbbbbb";
 static const char col_blue1[]       = "#0931aa";
 static const char col_blue2[]       = "#000066";
-static const char col_magenta[]     = "#c678dd";
 static const char col_red[]         = "#cc0000";
-static const char col_cyan[]        = "#0099ff";
-static const char col_nordbg[]      = "#4C566A";
+static const char col_cyan[]        = "#0033ff";
 static const char col_white1[]      = "#ffffff";
 static const char col_white2[]      = "#c5c8c6";
 static const char *colors[][3]      = {
@@ -39,8 +37,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	/* { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 }, */
+	{ NULL,       NULL,       NULL,       0,            False,       -1 },
 };
 
 /* layout(s) */
