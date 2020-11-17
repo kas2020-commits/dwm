@@ -19,17 +19,24 @@ static const char col_cyan[]        = "#0033ff";
 static const char col_white1[]      = "#ffffff";
 static const char col_white2[]      = "#c5c8c6";
 static const char *colors[][3]      = {
-	/*               fg        	bg         border   */
- 	[SchemeNorm] = { col_white2, col_gray2, col_gray2 },
- 	[SchemeSel]  = { col_white2, col_blue1,  col_cyan  },
+	/*                       fg          bg          border   */
+ 	[SchemeNorm]        =  { col_white2, col_gray2,  col_gray2 },
+ 	[SchemeSel]         =  { col_white2, col_blue1,  col_cyan  },
+	[SchemeTabActive]   =  { col_white2, col_gray2,  col_gray2 },
+	[SchemeTabInactive] =  { col_white2, col_gray2,  col_gray2 }
 };
 
 /* tagging */
 /* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
 /* static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
-static const char *alttags[] = { "", "", "", "", "", "", "", "", "" };
 
+/* // If you want all 10 numbers on the keyboard to map to a unique workspace: */
+/* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
+/* static const char *alttags[] = { "", "", "", "", "", "", "", "", "" }; */
+
+// If you want to limit yourself to 5 workspaces:
+static const char *tags[] = { "", "", "", "", "" };
+static const char *alttags[] = { "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -45,11 +52,20 @@ static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] *
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
+/* Bartabgroups properties */
+#define BARTAB_BORDERS 0       // 0 = off, 1 = on
+#define BARTAB_BOTTOMBORDER 0  // 0 = off, 1 = on
+#define BARTAB_TAGSINDICATOR 0 // 0 = off, 1 = on if >1 client/view tag, 2 = always on
+#define BARTAB_TAGSPX 5        // # pixels for tag grid boxes
+#define BARTAB_TAGSROWS 3      // # rows in tag grid (9 tags, e.g. 3x3)
+static void (*bartabmonfns[])(Monitor *) = { monocle /* , customlayoutfn */ };
+static void (*bartabfloatfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
+
 static const Layout layouts[] = {
 /* first entry is default */
 	/* symbol     arrange function */
-	{ "", 	tile},
 	{ "", 	monocle},
+	{ "", 	tile},
 	{ "", 	NULL },    /* no layout function means floating behavior */
 };
 
